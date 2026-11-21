@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@400;500;600;700&family=Gaegu:wght@400;700&family=Gamja+Flower&family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nunito:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-cream: #FFFDF9;
+  --bg-cream-paper: #FAF7EE;
+  --pastel-pink: #FFD6E0;
+  --pastel-blush: #FFB3C6;
+  --pastel-yellow: #FFF3B0;
+  --pastel-lavender: #E8DDFB;
+  --pastel-mint: #D8F3DC;
+  --ink-dark: #3D3A38;
+  --ink-muted: #7A726D;
+
+  --font-title-latin: 'Playfair Display', serif;
+  --font-bubble-latin: 'Fredoka', cursive;
+  --font-body-latin: 'Nunito', sans-serif;
+  --font-hand-latin: 'Caveat', cursive;
+
+  --font-title-ko: 'Gowun Batang', serif;
+  --font-bubble-ko: 'Gaegu', cursive;
+  --font-body-ko: 'Gowun Dodum', sans-serif;
+  --font-hand-ko: 'Gamja Flower', cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-cream);
+  color: var(--ink-dark);
+  font-family: var(--font-body-latin);
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: #FFFDF9;
+  background-image: 
+    radial-gradient(circle at 10% 15%, rgba(255, 214, 224, 0.4) 0%, transparent 40%),
+    radial-gradient(circle at 85% 25%, rgba(255, 243, 176, 0.4) 0%, transparent 40%),
+    radial-gradient(circle at 25% 75%, rgba(232, 221, 251, 0.4) 0%, transparent 45%),
+    radial-gradient(circle at 80% 85%, rgba(216, 243, 220, 0.4) 0%, transparent 40%),
+    radial-gradient(#D6CCC2 0.75px, transparent 0.75px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 24px 24px;
+}
+
+/* Korean Typography automatic word breaking */
+[lang="ko"] {
+  font-family: var(--font-body-ko);
+  word-break: keep-all;
+}
+
+[lang="ko"] h1,
+[lang="ko"] h2,
+[lang="ko"] h3,
+[lang="ko"] .font-title {
+  font-family: var(--font-title-ko);
+  word-break: keep-all;
+}
+
+[lang="ko"] .font-bubble {
+  font-family: var(--font-bubble-ko);
+}
+
+[lang="ko"] .font-hand {
+  font-family: var(--font-hand-ko);
+}
+
+/* Liquid Glass Utilities */
+.liquid-glass {
+  background: rgba(255, 253, 249, 0.78);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 35px -8px rgba(210, 160, 175, 0.25);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+}
+
+.liquid-glass-sm {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 20px -4px rgba(210, 160, 175, 0.18);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Notebook paper lined texture */
+.notebook-lined-bg {
+  background-color: #FFFDF7;
+  background-image: 
+    linear-gradient(90deg, transparent 48px, #FFB4B4 48px, #FFB4B4 50px, transparent 50px),
+    linear-gradient(#E8E2D5 1px, transparent 1px);
+  background-size: 100% 100%, 100% 32px;
+}
+
+/* Paper 3D Corner fold */
+.paper-curl-corner {
+  position: relative;
+}
+
+.paper-curl-corner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 18px 18px;
+  border-color: transparent transparent #E4DDD4 transparent;
+  transition: border-width 0.3s ease;
+}
+
+.paper-curl-corner:hover::after {
+  border-width: 0 0 26px 26px;
+}
